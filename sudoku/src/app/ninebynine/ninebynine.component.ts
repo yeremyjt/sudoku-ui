@@ -43,103 +43,105 @@ export class NineByNineComponent {
 
     let bodyString = JSON.stringify(this.inputBoard);
 
-    this.cell0 = 'A';
-    this.cell1 = this.cell4;
-    this.cell2 = this.cell4;
     console.log(this.inputBoard.getMatrix());
     console.log(bodyString);
 
-    this.board = this.sudokuService.solve();
-    console.log(this.board)
+    this.sudokuService.solve(this.inputBoard).subscribe
+    (board => {
+      console.log(board);
+      this.board = board;
+      
+      this.cell0 = this.board.matrix[0][0].value;
+      this.cell1 = this.board.matrix[0][1].value;
+      this.cell2 = this.board.matrix[0][2].value;
+      this.cell3 = this.board.matrix[0][3].value;
+      this.cell4 = this.board.matrix[0][4].value;
+      this.cell5 = this.board.matrix[0][5].value;
+      this.cell6 = this.board.matrix[0][6].value;
+      this.cell7 = this.board.matrix[0][7].value;
+      this.cell8 = this.board.matrix[0][8].value;
 
-    this.cell0 = this.board.matrix[0][0].value;
-    this.cell1 = this.board.matrix[0][1].value;
-    this.cell2 = this.board.matrix[0][2].value;
-    this.cell3 = this.board.matrix[0][3].value;
-    this.cell4 = this.board.matrix[0][4].value;
-    this.cell5 = this.board.matrix[0][5].value;
-    this.cell6 = this.board.matrix[0][6].value;
-    this.cell7 = this.board.matrix[0][7].value;
-    this.cell8 = this.board.matrix[0][8].value;
+      this.cell9 = this.board.matrix[1][0].value;
+      this.cell10 = this.board.matrix[1][1].value;
+      this.cell11 = this.board.matrix[1][2].value;
+      this.cell12 = this.board.matrix[1][3].value;
+      this.cell13 = this.board.matrix[1][4].value;
+      this.cell14 = this.board.matrix[1][5].value;
+      this.cell15 = this.board.matrix[1][6].value;
+      this.cell16 = this.board.matrix[1][7].value;
+      this.cell17 = this.board.matrix[1][8].value;
+      
+      this.cell18 = this.board.matrix[2][0].value;
+      this.cell19 = this.board.matrix[2][1].value;
+      this.cell20 = this.board.matrix[2][2].value;
+      this.cell21 = this.board.matrix[2][3].value;
+      this.cell22 = this.board.matrix[2][4].value;
+      this.cell23 = this.board.matrix[2][5].value;
+      this.cell24 = this.board.matrix[2][6].value;
+      this.cell25 = this.board.matrix[2][7].value;
+      this.cell26 = this.board.matrix[2][8].value;
 
-    this.cell9 = this.board.matrix[1][0].value;
-    this.cell10 = this.board.matrix[1][1].value;
-    this.cell11 = this.board.matrix[1][2].value;
-    this.cell12 = this.board.matrix[1][3].value;
-    this.cell13 = this.board.matrix[1][4].value;
-    this.cell14 = this.board.matrix[1][5].value;
-    this.cell15 = this.board.matrix[1][6].value;
-    this.cell16 = this.board.matrix[1][7].value;
-    this.cell17 = this.board.matrix[1][8].value;
-    
-    this.cell18 = this.board.matrix[2][0].value;
-    this.cell19 = this.board.matrix[2][1].value;
-    this.cell20 = this.board.matrix[2][2].value;
-    this.cell21 = this.board.matrix[2][3].value;
-    this.cell22 = this.board.matrix[2][4].value;
-    this.cell23 = this.board.matrix[2][5].value;
-    this.cell24 = this.board.matrix[2][6].value;
-    this.cell25 = this.board.matrix[2][7].value;
-    this.cell26 = this.board.matrix[2][8].value;
+      this.cell27 = this.board.matrix[3][0].value;
+      this.cell28 = this.board.matrix[3][1].value;
+      this.cell29 = this.board.matrix[3][2].value;
+      this.cell30 = this.board.matrix[3][3].value;
+      this.cell31 = this.board.matrix[3][4].value;
+      this.cell32 = this.board.matrix[3][5].value;
+      this.cell33 = this.board.matrix[3][6].value;
+      this.cell34 = this.board.matrix[3][7].value;
+      this.cell35 = this.board.matrix[3][8].value;
 
-    this.cell27 = this.board.matrix[3][0].value;
-    this.cell28 = this.board.matrix[3][1].value;
-    this.cell29 = this.board.matrix[3][2].value;
-    this.cell30 = this.board.matrix[3][3].value;
-    this.cell31 = this.board.matrix[3][4].value;
-    this.cell32 = this.board.matrix[3][5].value;
-    this.cell33 = this.board.matrix[3][6].value;
-    this.cell34 = this.board.matrix[3][7].value;
-    this.cell35 = this.board.matrix[3][8].value;
+      this.cell36 = this.board.matrix[4][0].value;
+      this.cell37 = this.board.matrix[4][1].value;
+      this.cell38 = this.board.matrix[4][2].value;
+      this.cell39 = this.board.matrix[4][3].value;
+      this.cell40 = this.board.matrix[4][4].value;
+      this.cell41 = this.board.matrix[4][5].value;
+      this.cell42 = this.board.matrix[4][6].value;
+      this.cell43 = this.board.matrix[4][7].value;
+      this.cell44 = this.board.matrix[4][8].value;
 
-    this.cell36 = this.board.matrix[4][0].value;
-    this.cell37 = this.board.matrix[4][1].value;
-    this.cell38 = this.board.matrix[4][2].value;
-    this.cell39 = this.board.matrix[4][3].value;
-    this.cell40 = this.board.matrix[4][4].value;
-    this.cell41 = this.board.matrix[4][5].value;
-    this.cell42 = this.board.matrix[4][6].value;
-    this.cell43 = this.board.matrix[4][7].value;
-    this.cell44 = this.board.matrix[4][8].value;
+      this.cell45 = this.board.matrix[5][0].value;
+      this.cell46 = this.board.matrix[5][1].value;
+      this.cell47 = this.board.matrix[5][2].value;
+      this.cell48 = this.board.matrix[5][3].value;
+      this.cell49 = this.board.matrix[5][4].value;
+      this.cell50 = this.board.matrix[5][5].value;
+      this.cell51 = this.board.matrix[5][6].value;
+      this.cell52 = this.board.matrix[5][7].value;
+      this.cell53 = this.board.matrix[5][8].value;
 
-    this.cell45 = this.board.matrix[5][0].value;
-    this.cell46 = this.board.matrix[5][1].value;
-    this.cell47 = this.board.matrix[5][2].value;
-    this.cell48 = this.board.matrix[5][3].value;
-    this.cell49 = this.board.matrix[5][4].value;
-    this.cell50 = this.board.matrix[5][5].value;
-    this.cell51 = this.board.matrix[5][6].value;
-    this.cell52 = this.board.matrix[5][7].value;
-    this.cell53 = this.board.matrix[5][8].value;
+      this.cell54 = this.board.matrix[6][0].value;
+      this.cell55 = this.board.matrix[6][1].value;
+      this.cell56 = this.board.matrix[6][2].value;
+      this.cell57 = this.board.matrix[6][3].value;
+      this.cell58 = this.board.matrix[6][4].value;
+      this.cell59 = this.board.matrix[6][5].value;
+      this.cell60 = this.board.matrix[6][6].value;
+      this.cell61 = this.board.matrix[6][7].value;
+      this.cell62 = this.board.matrix[6][8].value;
 
-    this.cell54 = this.board.matrix[6][0].value;
-    this.cell55 = this.board.matrix[6][1].value;
-    this.cell56 = this.board.matrix[6][2].value;
-    this.cell57 = this.board.matrix[6][3].value;
-    this.cell58 = this.board.matrix[6][4].value;
-    this.cell59 = this.board.matrix[6][5].value;
-    this.cell60 = this.board.matrix[6][6].value;
-    this.cell61 = this.board.matrix[6][7].value;
-    this.cell62 = this.board.matrix[6][8].value;
+      this.cell63 = this.board.matrix[7][0].value;
+      this.cell64 = this.board.matrix[7][1].value;
+      this.cell65 = this.board.matrix[7][2].value;
+      this.cell66 = this.board.matrix[7][3].value;
+      this.cell67 = this.board.matrix[7][4].value;
+      this.cell68 = this.board.matrix[7][5].value;
+      this.cell69 = this.board.matrix[7][6].value;
+      this.cell70 = this.board.matrix[7][7].value;
+      this.cell71 = this.board.matrix[7][8].value;
 
-    this.cell63 = this.board.matrix[7][0].value;
-    this.cell64 = this.board.matrix[7][1].value;
-    this.cell65 = this.board.matrix[7][2].value;
-    this.cell66 = this.board.matrix[7][3].value;
-    this.cell67 = this.board.matrix[7][4].value;
-    this.cell68 = this.board.matrix[7][5].value;
-    this.cell69 = this.board.matrix[7][6].value;
-    this.cell70 = this.board.matrix[7][7].value;
-    this.cell71 = this.board.matrix[7][8].value;
-
-    this.cell72 = this.board.matrix[8][0].value;
-    this.cell73 = this.board.matrix[8][1].value;
-    this.cell74 = this.board.matrix[8][2].value;
-    this.cell75 = this.board.matrix[8][3].value;
-    this.cell76 = this.board.matrix[8][4].value;
-    this.cell77 = this.board.matrix[8][5].value;
-    this.cell78 = this.board.matrix[8][6].value;
-    this.cell79 = this.board.matrix[8][7].value;
-    this.cell80 = this.board.matrix[8][8].value;      
+      this.cell72 = this.board.matrix[8][0].value;
+      this.cell73 = this.board.matrix[8][1].value;
+      this.cell74 = this.board.matrix[8][2].value;
+      this.cell75 = this.board.matrix[8][3].value;
+      this.cell76 = this.board.matrix[8][4].value;
+      this.cell77 = this.board.matrix[8][5].value;
+      this.cell78 = this.board.matrix[8][6].value;
+      this.cell79 = this.board.matrix[8][7].value;
+      this.cell80 = this.board.matrix[8][8].value;
+    });
+  
+      
   }
 }
