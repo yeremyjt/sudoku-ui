@@ -3,6 +3,7 @@ import { InputBoard } from '../model/input-board';
 import { SudokuService } from '../sudoku.service';
 import { Board } from '../model/board'
 import { OnInit } from '@angular/core'
+import { forEach } from '@angular/router/src/utils/collection';
 
 
 @Component({
@@ -45,6 +46,8 @@ export class NineByNineComponent {
 
     console.log(this.inputBoard.getMatrix());
     console.log(bodyString);
+
+    this.cleanInputBoard(this.inputBoard);
 
     this.sudokuService.solve(this.inputBoard).subscribe
     (board => {
@@ -233,5 +236,17 @@ export class NineByNineComponent {
       this.ninebyNineCell78 = null;
       this.ninebyNineCell79 = null;
       this.ninebyNineCell80 = null;
+  }
+
+  cleanInputBoard(inputBoard) {
+    var n = inputBoard.getMatrix().length;
+
+    for (var i = 0; i < n; i++) {
+      for (var j = 0; j < n; j++) {
+        if (inputBoard.getMatrix()[i][j] == '') {
+          inputBoard.getMatrix()[i][j] = null;
+        }
+      }
+    }    
   }
 }
